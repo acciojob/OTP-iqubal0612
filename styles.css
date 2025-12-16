@@ -1,0 +1,51 @@
+/*  your css code here. If applicable */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f6fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#verification_heading {
+    margin-bottom: 10px;
+}
+
+#verification_subtext {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.code-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.code {
+    width: 45px;
+    height: 55px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.code:focus {
+    outline: none;
+    border-color: #4a90e2;
+}

@@ -1,5 +1,6 @@
 const inputs = document.querySelectorAll(".code");
 
+// initial focus (TEST EXPECTS THIS)
 inputs[0].focus();
 
 inputs.forEach((input, index) => {
@@ -13,8 +14,8 @@ inputs.forEach((input, index) => {
       return;
     }
 
-    // move to next input
-    if (value && index < inputs.length - 1) {
+    // move forward
+    if (index < inputs.length - 1) {
       inputs[index + 1].focus();
     }
   });
@@ -25,7 +26,6 @@ inputs.forEach((input, index) => {
 
       if (input.value === "" && index > 0) {
         inputs[index - 1].focus();
-        inputs[index - 1].value = "";
       } else {
         input.value = "";
       }

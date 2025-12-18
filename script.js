@@ -1,23 +1,34 @@
-const codes = document.querySelectorAll('.code');
+const inputs = document.querySelectorAll(".code");
 
-codes[0].focus();
+inputs[0].focus();
 
-codes.forEach((input, index) => {
-    input.addEventListener('keydown', (e) => {
+inputs.forEach((input, index) => {
 
-        if (e.key >= '0' && e.key <= '9') {
-            input.value = '';
-            setTimeout(() => {
-                if (index < codes.length - 1) {
-                    codes[index + 1].focus();
-                }
-            }, 10);
-        }
+  input.addEventListener("input", (e) => {
+    const value = e.target.value;
 
-        if (e.key === 'Backspace') {
-            if (input.value === '' && index > 0) {
-                codes[index - 1].focus();
-            }
-        }
-    });
+    // allow only digits
+    if (!/^\d$/.test(value)) {
+      input.value = "";
+      return;
+    }
+
+    // move to next input
+    if (value && index < inputs.length - 1) {
+      inputs[index + 1].focus();
+    }
+  });
+
+  input.addEventListener("keydown", (e) => {
+
+    if (e.key === "Backspace") {
+
+      if (input.value === "" && index > 0) {
+        inputs[index - 1].focus();
+        inputs[index - 1].value = "";
+      } else {
+        input.value = "";
+      }
+    }
+  });
 });
